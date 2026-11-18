@@ -52,14 +52,18 @@ All measures are stored in a dedicated `_Measures` table.
 ## Repository structure
 
 ```
-report/   Power BI project (PBIP: .pbip, .Report, .SemanticModel with TMDL)
+report/   Power BI report: .pbix (data embedded) and PBIP project (.pbip, .Report, .SemanticModel with TMDL)
 data/     CSV source files and expected values
 docs/     Screenshots, star schema, report theme
 ```
 
 ## How to open
 
-1. Clone the repository.
-2. Open `report/Quelle Academic Content Usage.pbip` in Power BI Desktop.
-3. Go to Home → Transform data → Edit parameters and set `DataFolder` to the full path of this repo's `data/` folder, including the trailing backslash (e.g. `C:\repos\academic_publishing_COUNTER\data\`).
-4. Refresh.
+**Quick view (recommended):** download `report/Quelle Academic Content Usage.pbix` and open it in Power BI Desktop. The data is embedded, so the report opens with all values. No setup needed.
+
+**Project files (PBIP):** for reading the model as text (TMDL) or rebuilding from the CSVs:
+
+1. Clone or download the repository.
+2. Open `report/Quelle Academic Content Usage.pbip` in Power BI Desktop. The report opens empty and shows a missing-path error, which is expected because the data is not embedded.
+3. Go to Home → Transform data → Edit parameters and set `DataFolder` to the full path of the repo's `data/` folder, including the trailing backslash (e.g. `C:\repos\academic_publishing_COUNTER\data\`).
+4. Apply changes / refresh.
