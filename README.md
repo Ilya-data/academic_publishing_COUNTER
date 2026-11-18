@@ -34,7 +34,7 @@ All measures are stored in a dedicated `_Measures` table.
 
 The KPIs are based on COUNTER Release 5.1 book metrics: TR_B1 (Total_Item_Requests, Unique_Title_Requests) and TR_B2 (No_License, Limit_Exceeded).
 
-| Measure | Calculation |
+| Measure | Definition |
 |---|---|
 | Unique Title Requests | Sum of `Unique_Title_Requests` |
 | Unique Title Requests YoY % | (Unique Title Requests − same period previous academic year) ÷ same period previous academic year |
