@@ -1,6 +1,6 @@
 # Quelle Academic – Content Usage Dashboard (Power BI)
 
-A two-page Power BI demo for a fictional scholarly book publisher. It shows Sales and Account Managers how institutional customers use the content and where they are being turned away, based on COUNTER Release 5.1 book metrics.
+A two-page Power BI demo for a fictional scholarly book publisher. It shows Sales and Account Managers how institutional customers use the content and where they are being turned away.
 
 ![Page 1 – Content usage overview](docs/page1_overview.png)
 ![Page 2 – Turnaways analysis](docs/page2_turnaways.png)
@@ -32,14 +32,18 @@ All measures are stored in a dedicated `_Measures` table.
 
 ## Key measures
 
-| Measure | Definition |
+The KPIs are based on COUNTER Release 5.1 book metrics: TR_B1 (Total_Item_Requests, Unique_Title_Requests) and TR_B2 (No_License, Limit_Exceeded).
+
+| Measure | Calculation |
 |---|---|
-| Unique Title Requests | Sum of COUNTER Unique_Title_Requests (headline usage metric for books) |
-| Unique Title Requests YoY % | Change vs the same period of the previous academic year |
-| Active Institutions | Institutions with at least one Unique Title Request |
-| Denials, No License Denials, Limit Exceeded Denials | Sum of COUNTER access denials, total and by type |
-| No License Share % | Share of No_License in all denials |
-| Turnaways per 100 Title Requests | Derived indicator, **not** a COUNTER metric |
+| Unique Title Requests | Sum of `Unique_Title_Requests` |
+| Unique Title Requests YoY % | (Unique Title Requests − same period previous academic year) ÷ same period previous academic year |
+| Active Institutions | Count of institutions with Unique Title Requests > 0 |
+| Denials | Sum of `No_License` + `Limit_Exceeded` |
+| No License Denials | Sum of `No_License` |
+| Limit Exceeded Denials | Sum of `Limit_Exceeded` |
+| No License Share % | No License Denials ÷ Denials |
+| Turnaways per 100 Title Requests | Denials ÷ Unique Title Requests × 100 (derived indicator, not a COUNTER metric) |
 
 ## About the data and scope
 
@@ -54,7 +58,7 @@ All measures are stored in a dedicated `_Measures` table.
 ```
 report/   Power BI report: .pbix (data embedded) and PBIP project (.pbip, .Report, .SemanticModel with TMDL)
 data/     CSV source files and expected values
-docs/     Screenshots, star schema, report theme
+docs/     Screenshots and star schema
 ```
 
 ## How to open
