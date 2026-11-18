@@ -1,0 +1,7 @@
+expression DataFolder = "C:\QuelleAcademic\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d40dcff3-8347-4da2-86e9-116894453573
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

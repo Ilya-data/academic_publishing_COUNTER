@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 67.415730337078656,
+        "y": 31.460674157303369
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 263.75,
+            "y": 316.25
+          },
+          "nodeIndex": "fact_usage",
+          "nodeLineageTag": "f190219d-c1f1-43d2-8252-20491984f3f6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 980.75,
+            "y": 320.25
+          },
+          "nodeIndex": "fact_denials",
+          "nodeLineageTag": "6ac2b02d-7d29-4bd9-85ac-3b40681d3e24",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 142.5,
+            "y": 0
+          },
+          "nodeIndex": "dim_title",
+          "nodeLineageTag": "44d7a859-2c33-4c0b-a204-c36e11d5fee1",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1234.75,
+            "y": 24.5
+          },
+          "nodeIndex": "dim_institution",
+          "nodeLineageTag": "8d68241d-c771-4799-9284-08548790cc48",
+          "size": {
+            "height": 230.74157303370782,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 600.33332824707031,
+            "y": 575
+          },
+          "nodeIndex": "dim_date",
+          "nodeLineageTag": "ed89e264-82d4-425b-a907-179549526499",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1493.25,
+            "y": 386.25
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "59488089-9330-407b-98d1-78819e401987",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 89,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

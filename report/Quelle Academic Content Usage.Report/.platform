@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Quelle Academic Content Usage"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "610bd5da-dd57-4b11-891e-a2edd866a0f8"
+  }
+}

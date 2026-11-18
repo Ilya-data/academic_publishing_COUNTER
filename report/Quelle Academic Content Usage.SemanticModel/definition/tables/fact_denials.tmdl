@@ -1,0 +1,63 @@
+table fact_denials
+	lineageTag: 6ac2b02d-7d29-4bd9-85ac-3b40681d3e24
+
+	column month_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 51bfb5fe-1147-46e6-9d70-042efa9970ab
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column institution_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ed6c882-4cf2-454b-92f8-faf9cc11295b
+		summarizeBy: none
+		sourceColumn: institution_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ab16ee9d-936b-4823-a694-9b62b7a4951f
+		summarizeBy: none
+		sourceColumn: title_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_type
+		dataType: string
+		lineageTag: c99f2d00-f056-424b-a9ed-79f4a38eaa2c
+		summarizeBy: none
+		sourceColumn: metric_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ba63c18-2aac-4adb-ada7-1bde37b74bc2
+		summarizeBy: sum
+		sourceColumn: metric_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_denials = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_denials.csv"),[Delimiter=",", Columns=5, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"month_start", type date}, {"institution_id", Int64.Type}, {"title_id", Int64.Type}, {"metric_type", type text}, {"metric_count", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

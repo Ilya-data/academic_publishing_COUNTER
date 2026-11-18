@@ -1,0 +1,64 @@
+table fact_usage
+	lineageTag: f190219d-c1f1-43d2-8252-20491984f3f6
+
+	column month_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e76b5940-2803-492e-a8ca-431905cb1e25
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column institution_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d6052411-8772-4b45-baf0-01c832c389bc
+		summarizeBy: none
+		sourceColumn: institution_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 396a1400-cf62-4fe9-9fef-583e1eea26e5
+		summarizeBy: none
+		sourceColumn: title_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_item_requests
+		dataType: int64
+		formatString: 0
+		lineageTag: 49d077f5-8936-4030-83bf-b77224b0bcf6
+		summarizeBy: sum
+		sourceColumn: total_item_requests
+
+		annotation SummarizationSetBy = Automatic
+
+	column unique_title_requests
+		dataType: int64
+		formatString: 0
+		lineageTag: fca10f01-9dcd-485c-8a3b-e0deb3c0da79
+		summarizeBy: sum
+		sourceColumn: unique_title_requests
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_usage = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_usage.csv"),[Delimiter=",", Columns=5, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"month_start", type date}, {"institution_id", Int64.Type}, {"title_id", Int64.Type}, {"total_item_requests", Int64.Type}, {"unique_title_requests", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

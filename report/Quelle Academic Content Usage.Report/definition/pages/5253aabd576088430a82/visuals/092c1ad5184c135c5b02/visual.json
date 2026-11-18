@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "092c1ad5184c135c5b02",
+  "position": {
+    "x": 34.920634920634917,
+    "y": 1040,
+    "z": 15000,
+    "height": 30.158730158730158,
+    "width": 536.50793650793651,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "* Synthetic COUNTER-style data · fictional publisher Quelle Academic",
+                    "textStyle": {
+                      "color": "#333333"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,31 @@
+institution_id,institution_name,institution_type,country,region,account_manager
+1,Varnholm University,University,Germany,DACH,Lena Hartmann
+2,Eldermark University,University,Germany,DACH,Lena Hartmann
+3,University of Ostrabruck,University,Germany,DACH,Lena Hartmann
+4,Brennwald University,University,Austria,DACH,Lena Hartmann
+5,University of Kallenstein,University,Switzerland,DACH,Lena Hartmann
+6,Hollingford University,University,United Kingdom,UK & Ireland,Oliver Grant
+7,University of Ashbourne Vale,University,United Kingdom,UK & Ireland,Oliver Grant
+8,Corrán University,University,Ireland,UK & Ireland,Oliver Grant
+9,Vandermeer University,University,Netherlands,Benelux,Sofie Janssens
+10,University of Liesbeek,University,Belgium,Benelux,Sofie Janssens
+11,Norrvik University,University,Sweden,Nordics,Sofie Janssens
+12,University of Tjelde,University,Norway,Nordics,Sofie Janssens
+13,Halvorsen University,University,Denmark,Nordics,Sofie Janssens
+14,Westbrook State University,University,United States,North America,Marcus Bell
+15,Pinehaven University,University,United States,North America,Marcus Bell
+16,Maplecrest University,University,Canada,North America,Marcus Bell
+17,Rheinfeld University of Applied Sciences,Univ. of Applied Sciences,Germany,DACH,Lena Hartmann
+18,Talbach University of Applied Sciences,Univ. of Applied Sciences,Germany,DACH,Lena Hartmann
+19,Sonnberg University of Applied Sciences,Univ. of Applied Sciences,Austria,DACH,Lena Hartmann
+20,Kestrel College of Arts,Univ. of Applied Sciences,United Kingdom,UK & Ireland,Oliver Grant
+21,Hagelund University College,Univ. of Applied Sciences,Denmark,Nordics,Sofie Janssens
+22,Delfhaven University of Applied Sciences,Univ. of Applied Sciences,Netherlands,Benelux,Sofie Janssens
+23,Institute for Medieval Studies Arnwald,Research Institute,Germany,DACH,Lena Hartmann
+24,Centre for Ancient Languages Lysander,Research Institute,United Kingdom,UK & Ireland,Oliver Grant
+25,Morrow Institute of Religious History,Research Institute,United States,North America,Marcus Bell
+26,Institute of Legal History Veldkamp,Research Institute,Netherlands,Benelux,Sofie Janssens
+27,Aurenfjord Institute for the Humanities,Research Institute,Norway,Nordics,Sofie Janssens
+28,Ostrabruck City Library,Public Library,Germany,DACH,Lena Hartmann
+29,Hollingford Public Library,Public Library,United Kingdom,UK & Ireland,Oliver Grant
+30,Westbrook Public Library,Public Library,United States,North America,Marcus Bell

@@ -1,0 +1,101 @@
+title_id,title_name,subject,data_type,yop
+1,Trade Networks: From Manuscript to Print,History,Book,2020
+2,Early Print Culture: Rethinking the Evidence,History,Book,2023
+3,Trade Networks: Perspectives and Debates,History,Book,2014
+4,Trade Networks: A Comparative Approach,History,Book,2024
+5,Rural Communities: From Manuscript to Print,History,Book,2021
+6,Rural Communities: A Comparative Approach,History,Book,2013
+7,Revolutionary Pamphlets: Rethinking the Evidence,History,Book,2018
+8,Border Regions: Sources and Methods,History,Book,2024
+9,Rural Communities: Perspectives and Debates,History,Book,2017
+10,Revolutionary Pamphlets: A Comparative Approach,History,Book,2017
+11,Early Print Culture: Case Studies,History,Book,2013
+12,Court Societies: Practices and Ideas,History,Book,2012
+13,Revolutionary Pamphlets: Practices and Ideas,History,Book,2015
+14,Maritime Empires: Sources and Methods,History,Book,2021
+15,Rural Communities: Texts and Contexts,History,Book,2012
+16,Guild Records: Rethinking the Evidence,History,Book,2023
+17,Stoic Ethics: From Manuscript to Print,Philosophy,Book,2021
+18,Early Modern Metaphysics: Texts and Contexts,Philosophy,Book,2018
+19,Aesthetics: A New History,Philosophy,Book,2019
+20,Early Modern Metaphysics: From Manuscript to Print,Philosophy,Book,2020
+21,Personal Identity: From Manuscript to Print,Philosophy,Book,2016
+22,Personal Identity: Rethinking the Evidence,Philosophy,Book,2016
+23,Personal Identity: Texts and Contexts,Philosophy,Book,2012
+24,Aesthetics: From Manuscript to Print,Philosophy,Book,2014
+25,Aesthetics: Sources and Methods,Philosophy,Book,2020
+26,Aesthetics: Texts and Contexts,Philosophy,Book,2014
+27,Philosophy of Language: Perspectives and Debates,Philosophy,Book,2024
+28,Kantian Themes: Perspectives and Debates,Philosophy,Book,2021
+29,Moral Realism: Texts and Contexts,Philosophy,Book,2021
+30,Kantian Themes: Rethinking the Evidence,Philosophy,Book,2022
+31,Comparative Ritual: Texts and Contexts,Theology & Religion,Book,2023
+32,Reformation Debates: Case Studies,Theology & Religion,Book,2020
+33,Church and State: Sources and Methods,Theology & Religion,Book,2022
+34,Mysticism: Practices and Ideas,Theology & Religion,Book,2012
+35,Monastic Rules: From Manuscript to Print,Theology & Religion,Book,2022
+36,Church and State: Rethinking the Evidence,Theology & Religion,Book,2021
+37,Reformation Debates: From Manuscript to Print,Theology & Religion,Book,2019
+38,Sacred Texts: A Comparative Approach,Theology & Religion,Book,2019
+39,Liturgy: Sources and Methods,Theology & Religion,Book,2015
+40,Mysticism: Rethinking the Evidence,Theology & Religion,Book,2020
+41,Comparative Ritual: A Comparative Approach,Theology & Religion,Book,2013
+42,Monastic Rules: A Comparative Approach,Theology & Religion,Book,2020
+43,Pilgrimage: A Comparative Approach,Theology & Religion,Book,2013
+44,Pilgrimage: From Manuscript to Print,Theology & Religion,Book,2015
+45,Morphology: A New History,Linguistics,Book,2016
+46,Pragmatics: An Introduction,Linguistics,Book,2014
+47,Sound Change: Rethinking the Evidence,Linguistics,Book,2024
+48,Semantic Change: A New History,Linguistics,Book,2015
+49,Semantic Change: Case Studies,Linguistics,Book,2023
+50,Morphology: Sources and Methods,Linguistics,Book,2019
+51,Corpus Methods: From Manuscript to Print,Linguistics,Book,2024
+52,Morphology: Rethinking the Evidence,Linguistics,Book,2017
+53,Pragmatics: Practices and Ideas,Linguistics,Book,2016
+54,Language Contact: Texts and Contexts,Linguistics,Book,2012
+55,Language Contact: A New History,Linguistics,Book,2022
+56,Endangered Languages: Perspectives and Debates,Linguistics,Book,2018
+57,Endangered Languages: Sources and Methods,Linguistics,Book,2023
+58,Corpus Methods: An Introduction,Linguistics,Book,2013
+59,Translation and Reception: Perspectives and Debates,Literary Studies,Book,2018
+60,Translation and Reception: Sources and Methods,Literary Studies,Book,2016
+61,Travel Writing: Texts and Contexts,Literary Studies,Book,2020
+62,Drama and Censorship: Perspectives and Debates,Literary Studies,Book,2016
+63,Periodical Cultures: A New History,Literary Studies,Book,2016
+64,Medieval Romance: Texts and Contexts,Literary Studies,Book,2024
+65,Modernist Poetics: An Introduction,Literary Studies,Book,2018
+66,Drama and Censorship: Rethinking the Evidence,Literary Studies,Book,2015
+67,Life Writing: An Introduction,Literary Studies,Book,2015
+68,Life Writing: Case Studies,Literary Studies,Book,2021
+69,Life Writing: Rethinking the Evidence,Literary Studies,Book,2021
+70,Travel Writing: A New History,Literary Studies,Book,2013
+71,Translation and Reception: An Introduction,Literary Studies,Book,2013
+72,Translation and Reception: From Manuscript to Print,Literary Studies,Book,2014
+73,Papyrology: Texts and Contexts,Classics,Book,2022
+74,Late Antique Letters: A Comparative Approach,Classics,Book,2014
+75,Homeric Questions: Practices and Ideas,Classics,Book,2012
+76,Papyrology: Rethinking the Evidence,Classics,Book,2021
+77,Ancient Rhetoric: Rethinking the Evidence,Classics,Book,2016
+78,Ancient Rhetoric: Sources and Methods,Classics,Book,2019
+79,Greek Tragedy: Perspectives and Debates,Classics,Book,2020
+80,Greek Tragedy: From Manuscript to Print,Classics,Book,2017
+81,Papyrology: A New History,Classics,Book,2014
+82,Homeric Questions: Sources and Methods,Classics,Book,2016
+83,Roman Law in Practice: A Comparative Approach,Classics,Book,2022
+84,Roman Law in Practice: Case Studies,Classics,Book,2024
+85,Athenian Democracy: A Comparative Approach,Classics,Book,2017
+86,Latin Epigraphy: Perspectives and Debates,Classics,Book,2019
+87,Canon Law: A New History,Law,Book,2013
+88,International Arbitration: Rethinking the Evidence,Law,Book,2018
+89,Human Rights Origins: From Manuscript to Print,Law,Book,2012
+90,Comparative Constitutions: Case Studies,Law,Book,2018
+91,Legal Pluralism: Rethinking the Evidence,Law,Book,2017
+92,International Arbitration: Sources and Methods,Law,Book,2019
+93,Customary Law: Rethinking the Evidence,Law,Book,2022
+94,Canon Law: An Introduction,Law,Book,2016
+95,Customary Law: A Comparative Approach,Law,Book,2023
+96,Human Rights Origins: Case Studies,Law,Book,2012
+97,Property and Possession: Practices and Ideas,Law,Book,2012
+98,Criminal Procedure: A Comparative Approach,Law,Book,2013
+99,Property and Possession: A Comparative Approach,Law,Book,2016
+100,Legal History: Perspectives and Debates,Law,Book,2020

@@ -1,0 +1,92 @@
+table dim_date
+	lineageTag: ed89e264-82d4-425b-a907-179549526499
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ba0f1e1d-764d-4d26-9f28-337635c0847c
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 69678838-d823-4bed-b520-2bd00a848eac
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = User
+
+	column month_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 9835ca74-8c13-4b87-a7bd-f95d389d92c8
+		summarizeBy: none
+		sourceColumn: month_no
+
+		annotation SummarizationSetBy = User
+
+	column month_name
+		dataType: string
+		lineageTag: f1436272-6ccb-45ef-bc3b-b7ea8948448e
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_month
+		dataType: string
+		lineageTag: c872ad20-aca6-48b2-a8d9-ee48133cce05
+		summarizeBy: none
+		sourceColumn: year_month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column academic_year
+		dataType: string
+		lineageTag: b92e6d3a-e617-4ffa-88df-acfc1798e4fc
+		summarizeBy: none
+		sourceColumn: academic_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column academic_month_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 48c40839-e1e4-473f-90ae-8c6c0190b3c1
+		summarizeBy: none
+		sourceColumn: academic_month_no
+
+		annotation SummarizationSetBy = User
+
+	column academic_month_label
+		dataType: string
+		lineageTag: a7411b89-6794-4210-9099-45ce957fe706
+		summarizeBy: none
+		sourceColumn: academic_month_label
+		sortByColumn: academic_month_no
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_date.csv"),[Delimiter=",", Columns=8, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"date", type date}, {"year", Int64.Type}, {"month_no", Int64.Type}, {"month_name", type text}, {"year_month", type text}, {"academic_year", type text}, {"academic_month_no", Int64.Type}, {"academic_month_label", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,24 @@
+relationship AutoDetected_d42ba385-9315-4a8f-8c98-3b56545ac4a0
+	fromColumn: fact_usage.title_id
+	toColumn: dim_title.title_id
+
+relationship AutoDetected_7653de07-2231-4768-9dfa-5c606a0315ab
+	fromColumn: fact_denials.title_id
+	toColumn: dim_title.title_id
+
+relationship AutoDetected_aa06675e-c58e-4847-8aa8-e4fcf10cd94c
+	fromColumn: fact_usage.institution_id
+	toColumn: dim_institution.institution_id
+
+relationship AutoDetected_b8e6b37c-5cd1-49fc-8cdc-ed0079a588b1
+	fromColumn: fact_denials.institution_id
+	toColumn: dim_institution.institution_id
+
+relationship 32a8ec07-df1e-d551-2747-43fafeb035b8
+	fromColumn: fact_usage.month_start
+	toColumn: dim_date.date
+
+relationship a1b1df2d-1e68-e8ea-e29f-c2a3902d444e
+	fromColumn: fact_denials.month_start
+	toColumn: dim_date.date
+

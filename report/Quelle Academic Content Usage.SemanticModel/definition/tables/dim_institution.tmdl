@@ -1,0 +1,70 @@
+table dim_institution
+	lineageTag: 8d68241d-c771-4799-9284-08548790cc48
+
+	column institution_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 20ac1dfa-5307-4579-9f41-1e46c904ff49
+		summarizeBy: none
+		sourceColumn: institution_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column institution_name
+		dataType: string
+		lineageTag: 743b4fdc-2347-424a-a8aa-46fc892a7cec
+		summarizeBy: none
+		sourceColumn: institution_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column institution_type
+		dataType: string
+		lineageTag: 42422d08-43ca-45af-a0ff-18f940881387
+		summarizeBy: none
+		sourceColumn: institution_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 6fe5ab3f-d8d8-4b55-a03c-cdacaab23317
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 40efb482-2850-4746-8c24-3add7923e90c
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_manager
+		dataType: string
+		lineageTag: aab59456-d67e-4092-a2b3-a88113eb0e71
+		summarizeBy: none
+		sourceColumn: account_manager
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_institution = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_institution.csv"),[Delimiter=",", Columns=6, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"institution_id", Int64.Type}, {"institution_name", type text}, {"institution_type", type text}, {"country", type text}, {"region", type text}, {"account_manager", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","Lena Hartmann","Lena H.",Replacer.ReplaceText,{"account_manager"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Oliver Grant","Oliver G.",Replacer.ReplaceText,{"account_manager"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Sofie Janssens","Sofie J.",Replacer.ReplaceText,{"account_manager"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Marcus Bell","Marcus B.",Replacer.ReplaceText,{"account_manager"})
+				in
+				    #"Replaced Value3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

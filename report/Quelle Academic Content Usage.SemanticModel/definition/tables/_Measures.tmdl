@@ -1,0 +1,94 @@
+table _Measures
+	lineageTag: 59488089-9330-407b-98d1-78819e401987
+
+	measure 'Unique Title Requests' =
+			
+			SUM ( fact_usage[unique_title_requests] )
+		formatString: #,0
+		lineageTag: 937fe8da-ae54-46fd-820a-338d3e6b7a33
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Unique Title Requests PY' =
+			
+			CALCULATE ( [Unique Title Requests], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+		formatString: #,0
+		lineageTag: 261fa6cf-ace1-40dd-923c-64996de237be
+
+	measure 'Unique Title Requests YoY %' =
+			
+			IF (
+			    NOT ISBLANK ( [Unique Title Requests PY] ),
+			    DIVIDE ( [Unique Title Requests] - [Unique Title Requests PY], [Unique Title Requests PY] )
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 7fee0453-4e01-4ffc-8852-ced9e414662c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Active Institutions' =
+			
+			COUNTROWS (
+			    FILTER ( VALUES ( dim_institution[institution_id] ), [Unique Title Requests] > 0 )
+			)
+		formatString: 0
+		lineageTag: a01eaad4-a1d5-4b8b-a9c9-50146b64d104
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Denials =
+			
+			SUM ( fact_denials[metric_count] )
+		formatString: #,0
+		lineageTag: 1a8baa78-db79-4289-a137-b9608d565c7d
+
+	measure 'Turnaways per 100 Title Requests' =
+			
+			DIVIDE ( [Denials], [Unique Title Requests] ) * 100
+		formatString: 0.0
+		lineageTag: c18ff660-e592-4525-8db4-243ed6df38dd
+
+	measure 'YoY Color' =
+			
+			VAR v = [Unique Title Requests YoY %]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( v ), "#605E5C",
+			        v >= 0, "#1E8C4E",
+			        "#D13438"
+			    )
+		lineageTag: 57f29d82-7a7c-45c8-a845-49111c1c74cc
+
+	measure 'No License Denials' =
+			
+			CALCULATE ( [Denials], fact_denials[metric_type] = "No_License" )
+		formatString: #,0
+		lineageTag: 84b09c50-1e07-40e5-89c6-32fea57fe14f
+
+	measure 'Limit Exceeded Denials' =
+			
+			CALCULATE ( [Denials], fact_denials[metric_type] = "Limit_Exceeded" )
+		formatString: #,0
+		lineageTag: faac9e6e-2467-4728-ac33-039fa4907ffc
+
+	measure 'No License Share %' =
+			
+			DIVIDE ( [No License Denials], [Denials] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 77a0dcc9-e282-4da9-98de-8ca88838d8d9
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+
